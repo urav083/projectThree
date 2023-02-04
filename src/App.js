@@ -32,8 +32,9 @@ function App() {
 
 
 
-  console.log(question);
-  console.log(rightAnswer);
+  // console.log(question);
+  // console.log(rightAnswer);
+  console.log(gameStarted);
 
   // Functions
   const handleChange = (event) => {
@@ -78,8 +79,8 @@ function App() {
 
   const startNewGame = () => {
     setQuestion("");
-    setRightAnswer("");
-    setSelectedValue("");
+    // setRightAnswer("");
+    // setSelectedValue("");
     setFinalValue("");
     setFormSubmitted(false);
     setGameStarted(true);
@@ -87,13 +88,7 @@ function App() {
 
   };
 
-  // const handleReset = () => {
-  //   setSelectedValue(null);
-  //   setFormSubmitted(false);
-  // };
-
-
-  console.log(finalValue);
+  // console.log(finalValue);
 
   return (
     <div className="App">
