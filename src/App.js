@@ -9,7 +9,7 @@ function App() {
   const [finalValue, setFinalValue] = useState("");
   const [score, setScore] = useState(0);
   const [formSubmitted, setFormSubmitted] = useState(false);
-  const [gameStarted, setGameStarted] = useState(false);
+  const [gameStarted, setGameStarted] = useState(0);
 
   // Fetching the api Data
   useEffect(() => {
@@ -49,11 +49,11 @@ function App() {
       setFinalValue(selectedValue);
       setScore(score + 100)
       setFormSubmitted(true);
-      setGameStarted(false);
+      
     } else {
       setFinalValue(selectedValue);
       setFormSubmitted(true);
-      setGameStarted(false);
+      
 
     }
   }
@@ -83,7 +83,8 @@ function App() {
     // setSelectedValue("");
     setFinalValue("");
     setFormSubmitted(false);
-    setGameStarted(true);
+    setGameStarted(gameStarted + 1);
+    
 
 
   };
