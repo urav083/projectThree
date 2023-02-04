@@ -71,7 +71,7 @@ function App() {
       <div>
         <p>Your answer is:</p>
         {finalValue === rightAnswer ? <h1>Right</h1> : <h1>Wrong</h1>}
-        
+
       </div>
     )
   }
@@ -83,7 +83,7 @@ function App() {
     setFinalValue("");
     setFormSubmitted(false);
     setGameStarted(true);
-    
+
 
   };
 
@@ -92,8 +92,6 @@ function App() {
   //   setFormSubmitted(false);
   // };
 
-  // Temp Components
-  const testComponent = () => <h1>TEST</h1>;
 
   console.log(finalValue);
 
