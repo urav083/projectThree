@@ -1,0 +1,32 @@
+// .backgroundImage {
+//     background-image: url(../assets/background.png);
+//     background-position: center;
+//     background-size: contain;
+//     height: 100vh;
+//     background-repeat: no-repeat;
+//     background-color: black;
+
+// }
+
+body {
+    background-image: url('../assets/DALL·E\ 2023-02-06\ 09.27.47\ -\ starry\ night\ sky\ background\,\ retro\ cartoon\ style.png');
+    /* URL to the background tile */
+    background-size: 200% 100%;
+    /* Set the size of the background image */
+    background-repeat: repeat-x;
+    /* Repeat the background image horizontally */
+    animation: scroll 120s linear infinite;
+    /* Define the animation */
+    height: 100vh;
+}
+
+@keyframes scroll {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: -100% 0;
+        /* Move the background image to the left */
+    }
+}

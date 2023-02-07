@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import './App.css';
+import './App.scss';
 
 function App() {
   // Creating states
@@ -93,6 +93,7 @@ function App() {
 
   return (
     <div className="App">
+      <div className='backgroundImage'>
       <h1> Trivia Question</h1>
       <button onClick={startNewGame}>Start New Game</button>
       <p dangerouslySetInnerHTML={{ __html: question }}></p>
@@ -107,6 +108,10 @@ function App() {
       <DisplayBox />
       <br></br>
       {score}
+
+
+      </div>
+      
 
     </div>
   );
