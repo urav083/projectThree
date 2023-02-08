@@ -112,3 +112,19 @@ input[type="radio"]:checked:before {
         /* Move the background image to the left */
     }
 }
+
+.glow {
+    animation: glow-and-enlarge 1s ease-in-out infinite alternate;
+}
+
+@keyframes glow-and-enlarge {
+    from {
+        transform: scale(1);
+        box-shadow: 0 0 10px #fff;
+    }
+
+    to {
+        transform: scale(1.1);
+        box-shadow: 0 0 20px #fff;
+    }
+}

@@ -19,10 +19,6 @@ function App() {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [gameStarted, setGameStarted] = useState(0);
 
-  // const [planets, setPlanets] = useState("");
-  // const images = [image100, image200, image300, image400, image500];
-  // const animations = ['animate1', 'animate2', 'animate3', 'animate4', 'animate5'];
-
   // Fetching the api Data
   useEffect(() => {
 
@@ -30,7 +26,6 @@ function App() {
       try {
         const response = await fetch("https://opentdb.com/api.php?amount=1&type=boolean");
         const data = await response.json();
-        // console.log(data.results[0]);
         setRightAnswer(data.results[0].correct_answer);
         setQuestion(data.results[0].question);
       } catch (error) {
@@ -61,12 +56,9 @@ function App() {
       setFinalValue(selectedValue);
       setScore(score + 100)
       setFormSubmitted(true);
-
-
     } else {
       setFinalValue(selectedValue);
       setFormSubmitted(true);
-
     }
   }
 
@@ -111,7 +103,7 @@ function App() {
           <h1 className='topHeader'>Space Trivia</h1>
         </header>
         <div className='bodyDiv'>
-          <button onClick={startNewGame} className='questionButton'>New Question</button>
+          <button onClick={startNewGame} className={`questionButton ${finalValue !== '' || gameStarted === 0 ? 'glow' :''} `}>New Question</button>
           {gameStarted === 0 ? <div className='questionDiv'><p className='introText'> Greetings, traveler! We seem to have run out of fuel on our voyage and need your help. Answer trivia questions correctly and help us earn the credits to re-fuel at five friendly planets. Get us to 500 and we'll be able to make the journey home!</p></div> : 
             
           <div className='questionDiv'>
