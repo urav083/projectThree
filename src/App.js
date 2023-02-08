@@ -112,7 +112,7 @@ function App() {
         </header>
         <div className='bodyDiv'>
           <button onClick={startNewGame} className='questionButton'>New Question</button>
-          {gameStarted === 0 ? <div className='questionDiv'><p className='introText'> Greetings, space traveler! We seem to have run out of fuel on voyage and need your help. Answer the trivia questions correctly and help us earn the credits to re-fuel. Get us to 500 and we'll be able to make the journey home!</p></div> : 
+          {gameStarted === 0 ? <div className='questionDiv'><p className='introText'> Greetings, space traveler! We seem to have run out of fuel on our voyage and need your help. Answer the trivia questions correctly and help us earn the credits to re-fuel. Get us to 500 and we'll be able to make the journey home!</p></div> : 
             
           <div className='questionDiv'>
             <p dangerouslySetInnerHTML={{ __html: question }}></p>
