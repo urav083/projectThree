@@ -34,15 +34,16 @@ input[type="radio"] {
     appearance: none;
     background-color: #fff;
     border: 2px solid #000;
-    border-radius: 30%;
+    border-radius: 20%;
     height: 20px;
     width: 20px;
     outline: none;
     position: relative;
     vertical-align: middle;
     margin-left: 3%;
-    margin-right: 1%;
-    padding-top: 3%;
+    margin-right: 2%;
+    padding-top: 2%;
+    margin-top: -0.14%;
 }
 
 input[type="radio"]:before {
@@ -79,6 +80,7 @@ input[type="radio"]:checked:before {
 
 .planetDiv {
     width: 100%;
+    height: 100%;
     position: relative;
 
     z-index: -99;
@@ -92,14 +94,10 @@ input[type="radio"]:checked:before {
     position: absolute;
     right: -35%;
     width: 30%;
+    top: -20%;
 }
 
-.animate1,
-.animate2,
-.animate3,
-.animate4,
-.animate5 {
-
+.animate1 {
     animation: scroll2 4s linear;
     animation-iteration-count: 1;
 }

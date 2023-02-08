@@ -1,18 +1,44 @@
 @use './variables.scss' as *;
 
 @media (max-width: 480px) {
-    .topHeader{
+    .topHeader {
         margin-bottom: 5%;
     }
+
     .bodyDiv {
         margin-bottom: 6%;
-        height: 55%;
+        min-height: 65%;
     }
+
     .questionDiv {
         width: 75%;
-        height: 70%;
+        height: 60%;
+        padding-top: 5%;
+        padding-bottom: 5%;
     }
+
     .shipDiv {
         bottom: 13%;
     }
+
+    .image-container {
+        width: 110%;
+        top: -15%;
+        right: -120%;
+    }
+
+    .animate1 {
+        animation: scroll2 4s ease-in;
+        animation-iteration-count: 1;
+    }
+        @keyframes scroll2 {
+            from {
+                transform: translateX(0%)
+            }
+    
+            to {
+                transform: translateX(-200%);
+                /* Move the background image to the left */
+            }
+        }
 }

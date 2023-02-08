@@ -120,8 +120,16 @@ function App() {
               <br></br>
               <button type='submit' disabled={formSubmitted} className='answerButton'>Answer</button>
             </form>
+            
           </div>
           <DisplayBox />
+          <div className='scoreDiv'>
+            <p>
+              SCORE
+              <br></br>
+              {score}
+            </p>
+          </div>
         </div>
 
         <div className="planetDiv">
@@ -168,13 +176,7 @@ function App() {
           </div>
         </div>
 
-        <div className='scoreDiv'>
-          <p>
-            SCORE
-            <br></br>
-            {score}
-          </p>
-        </div>
+
 
 
       </div>
