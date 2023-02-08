@@ -133,7 +133,7 @@ function App() {
             <p>
               SCORE
               <br></br>
-              {score}
+              {score}/500
             </p>
           </div>
         </div>
@@ -184,7 +184,8 @@ function App() {
 
 
 
-
+        <div class="icon"></div>
+        <div class="text">This is the copyright</div>
       </div>
 
 
