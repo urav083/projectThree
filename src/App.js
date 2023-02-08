@@ -1,5 +1,13 @@
 import { useEffect, useState } from 'react';
 import './App.scss';
+import ship from './assets/ship.png';
+
+import image100 from './assets/image100.png';
+import image200 from './assets/image200.png';
+import image300 from './assets/image300.png';
+import image400 from './assets/image400.png';
+import image500 from './assets/image500.png';
+
 
 function App() {
   // Creating states
@@ -10,6 +18,10 @@ function App() {
   const [score, setScore] = useState(0);
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [gameStarted, setGameStarted] = useState(0);
+  
+  // const [planets, setPlanets] = useState("");
+  // const images = [image100, image200, image300, image400, image500];
+  // const animations = ['animate1', 'animate2', 'animate3', 'animate4', 'animate5'];
 
   // Fetching the api Data
   useEffect(() => {
@@ -50,10 +62,10 @@ function App() {
       setScore(score + 100)
       setFormSubmitted(true);
       
+
     } else {
       setFinalValue(selectedValue);
       setFormSubmitted(true);
-      
 
     }
   }
@@ -62,7 +74,6 @@ function App() {
     return (
       <div>
         {finalValue ? <DisplayBox2 /> : <h1>Waiting for your answer...</h1>}
-        {/* {finalValue === rightAnswer ? <h1>Right</h1> : <h1>Wrong</h1>} */}
       </div>
     )
   }
@@ -72,7 +83,6 @@ function App() {
       <div>
         <p>Your answer is:</p>
         {finalValue === rightAnswer ? <h1>Right</h1> : <h1>Wrong</h1>}
-
       </div>
     )
   }
@@ -84,34 +94,95 @@ function App() {
     setFinalValue("");
     setFormSubmitted(false);
     setGameStarted(gameStarted + 1);
-    
-
-
   };
 
   // console.log(finalValue);
 
   return (
     <div className="App">
-      <div className='backgroundImage'>
-      <h1> Trivia Question</h1>
-      <button onClick={startNewGame}>Start New Game</button>
-      <p dangerouslySetInnerHTML={{ __html: question }}></p>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor='trueOption'>True</label>
-        <input type="radio" id='trueOption' name='quizBoolean' value='True' onChange={handleChange} />
-        <label htmlFor='falseOption'>False</label>
-        <input type="radio" id='falseOption' name='quizBoolean' value='False' onChange={handleChange} />
+      <div className='wrapper'>
+        <div class="tile">
+          
+        </div>
+        <div className='shipDiv'>
+          <img src={ship} alt="a ship" />
+        </div>
+        <h1 className='topHeader'>Space Trivia</h1>
+        <button onClick={startNewGame}>New Question</button>
+        <div className='questionDiv'>
+          <p dangerouslySetInnerHTML={{ __html: question }}></p>
+          <form onSubmit={handleSubmit} className='form'>
+            <label htmlFor='trueOption'>True</label>
+            <input type="radio" id='trueOption' name='quizBoolean' value='True' onChange={handleChange} />
+            <label htmlFor='falseOption'>False</label>
+            <input type="radio" id='falseOption' name='quizBoolean' value='False' onChange={handleChange} />
+            <br></br>
+            <button type='submit' disabled={formSubmitted} className='answerButton'>Answer</button>
+          </form>
+        </div>
+        <DisplayBox />
+
+        <div className="planetDiv">
+
+          <div className={`image-container ${score >= 100 ? 'animate1' : ''}`}>
+            <img src={image100} 
+              style={{
+                display: score >= 100 && score <200 ? "block" : "none",
+                
+              }}
+            alt="Planet 1" />
+          </div>
+          <div className={`image-container ${score >= 200 ? 'animate1' : ''}`}>
+            <img src={image200} 
+              style={{
+                display: score >= 200 ? "block" : "none",
+
+              }}
+            alt="Planet 2" />
+          </div>
+          <div className={`image-container ${score >= 300 ? 'animate1' : ''}`}>
+            <img src={image300}
+              style={{
+                display: score >= 300 ? "block" : "none",
+
+              }}
+            alt="Planet 3" />
+          </div>
+          <div className={`image-container ${score >= 400 ? 'animate1' : ''}`}>
+            <img src={image400} 
+              style={{
+                display: score >= 400 ? "block" : "none",
+
+              }}
+            alt="Planet 4" />
+          </div>
+          <div className={`image-container ${score >= 500 ? 'animate1' : ''}`}>
+            <img src={image500} 
+              style={{
+                display: score >= 500 ? "block" : "none",
+
+              }}
+            alt="Planet 5" />
+          </div>
+        </div>
+        {/* <div className="planetDiv">
+          <img
+            src={images[(score / 100) - 1]}
+            className={score > 0 ? animations[(score / 100) - 1] : ""}
+            style={{ display: score > 0 ? "block" : "none" }}
+          />
+        </div> */}
+
         <br></br>
-        <button type='submit' disabled={formSubmitted}>Answer</button>
-      </form>
-      <DisplayBox />
-      <br></br>
-      {score}
+        <p>
+          score
+          <br></br>
+          {score}
+        </p>
 
 
       </div>
-      
+
 
     </div>
   );

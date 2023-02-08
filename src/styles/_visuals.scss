@@ -1,24 +1,16 @@
-// .backgroundImage {
-//     background-image: url(../assets/background.png);
-//     background-position: center;
-//     background-size: contain;
+@use './variables.scss' as *;
+
+// body {
+//     background-image: url('../assets/DALL·E\ 2023-02-06\ 09.27.47\ -\ starry\ night\ sky\ background\,\ retro\ cartoon\ style.png');
+//     /* URL to the background tile */
+//     background-size: 200% 100%;
+//     /* Set the size of the background image */
+//     background-repeat: repeat-x;
+//     /* Repeat the background image horizontally */
+//     animation: scroll 25s linear infinite;
+//     /* Define the animation */
 //     height: 100vh;
-//     background-repeat: no-repeat;
-//     background-color: black;
-
 // }
-
-body {
-    background-image: url('../assets/DALL·E\ 2023-02-06\ 09.27.47\ -\ starry\ night\ sky\ background\,\ retro\ cartoon\ style.png');
-    /* URL to the background tile */
-    background-size: 200% 100%;
-    /* Set the size of the background image */
-    background-repeat: repeat-x;
-    /* Repeat the background image horizontally */
-    animation: scroll 120s linear infinite;
-    /* Define the animation */
-    height: 100vh;
-}
 
 @keyframes scroll {
     from {
@@ -27,6 +19,158 @@ body {
 
     to {
         background-position: -100% 0;
+        /* Move the background image to the left */
+    }
+}
+
+// @keyframes scroll {
+//     from {
+//         transform: translate3d(-50%, 0, 0);
+//     }
+
+//     to {
+//         transform: translate3d(50%, 0, 0);
+//     }
+// }
+
+// @keyframes scroll {
+//     from {
+//         transform: translate(0);
+//     }
+
+//     to {
+//         transform: translate(100%);
+
+//         /* Move the background image to the left */
+//     }
+// }
+
+.tile {
+    position: absolute;
+    z-index: -100;
+    top: 0;
+    left: 0;
+    width: 20000%;
+    height: 100vh;
+    // background-image: url('../assets/DALL·E\ 2023-02-06\ 09.27.47\ -\ starry\ night\ sky\ background\,\ retro\ cartoon\ style.png');
+    background-image: url('../assets/bg2.png');
+    animation: scroll 2050s infinite linear;
+    background-size: contain;
+}
+
+.shipDiv {
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    bottom: 20%;
+    right: 50%;
+    padding-top: 1.5%;
+
+    img {
+        width: 175%;
+        transform: rotate(30deg);
+    }
+}
+
+.questionDiv {
+    width: 25%;
+    margin: 0 auto;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    background-color: $dark;
+        border: 2px solid white;
+            border-radius: 5px;
+            font-size: 1.6rem;
+            padding: 10px 20px;
+            text-transform: uppercase;
+            font-family: $thirdFont;
+            opacity: 1;
+}
+
+form {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    padding: 1%;
+    
+}
+
+input[type="radio"] {
+    appearance: none;
+    background-color: #fff;
+    border: 2px solid #000;
+    border-radius: 30%;
+    height: 20px;
+    width: 20px;
+    outline: none;
+    position: relative;
+    vertical-align: middle;
+    margin-left: 3%;
+    margin-right: 1%;
+    padding-top: 3%;
+}
+
+input[type="radio"]:before {
+    content: "";
+    display: block;
+    border-radius: 50%;
+    height: 12px;
+    width: 12px;
+    left: 2px;
+    position: absolute;
+    top: 2px;
+}
+
+input[type="radio"]:checked:before {
+    background-color: #000;
+}
+
+.answerButton {
+    background-color: transparent;
+    border: none;
+    margin: 0;
+    padding: 0;
+    margin-top: 3%;
+    background-color: black;
+    color: $light;
+    border: 2px solid white;
+    border-radius: 5px;
+    font-size: 1.6rem;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    font-family: $thirdFont;
+    opacity: 0.6;
+}
+
+.planetDiv {
+    width: 100%;
+    position: relative;
+
+    z-index: -99;
+    
+    img {
+        width: 100%;
+    }
+}
+
+.image-container {
+    position: absolute;
+    right: -35%;
+    width: 30%;
+}
+
+.animate1, .animate2, .animate3, .animate4, .animate5 {
+    
+    animation: scroll2 4s linear;
+    animation-iteration-count: 1;
+}
+
+@keyframes scroll2 {
+    from {
+        transform: translateX(110%)
+    }
+
+    to {
+        transform: translateX(-440%);
         /* Move the background image to the left */
     }
 }

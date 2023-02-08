@@ -259,17 +259,14 @@ html {
   overflow: hidden;
 }
 
-body {
-  background-image: url("../assets/DALL·E 2023-02-06 09.27.47 - starry night sky background, retro cartoon style.png");
-  /* URL to the background tile */
-  background-size: 200% 100%;
-  /* Set the size of the background image */
-  background-repeat: repeat-x;
-  /* Repeat the background image horizontally */
-  -webkit-animation: scroll 120s linear infinite;
-          animation: scroll 120s linear infinite;
-  /* Define the animation */
-  height: 100vh;
+:root {
+  font-size: 62.5%;
+}
+:root body {
+  margin: 0;
+  font-size: 1.6rem;
+  font-family: "Roboto Mono", monospace;
+  color: #e6b34f;
 }
 
 @-webkit-keyframes scroll {
@@ -277,7 +274,7 @@ body {
     background-position: 0 0;
   }
   to {
-    background-position: -100% 0;
+    background-position: 100% 0;
     /* Move the background image to the left */
   }
 }
@@ -287,13 +284,72 @@ body {
     background-position: 0 0;
   }
   to {
-    background-position: -100% 0;
+    background-position: 100% 0;
     /* Move the background image to the left */
   }
 }
+.tile {
+  position: absolute;
+  z-index: -100;
+  top: 0;
+  left: 0;
+  width: 1000%;
+  height: 100vh;
+  background-image: url("../assets/DALL·E 2023-02-06 09.27.47 - starry night sky background, retro cartoon style.png");
+  -webkit-animation: scroll 50s infinite linear;
+          animation: scroll 50s infinite linear;
+  background-repeat: repeat-x;
+}
+
+.shipDiv {
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  bottom: 35%;
+  right: 50%;
+  padding-top: 1.5%;
+}
+.shipDiv img {
+  width: 175%;
+  transform: rotate(30deg);
+}
+
+.wrapper {
+  margin: 0 auto;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+h1 {
+  font-family: "Orbitron", sans-serif;
+  color: #EEE7D9;
+}
+
+.topHeader {
+  padding-top: 5%;
+  margin-bottom: 7%;
+  font-size: 5rem;
+  font-weight: 600;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  color: #EEE7D9;
+  border: 2px solid white;
+  border-radius: 5px;
+  font-size: 16px;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  font-family: "Exo", sans-serif;
+  opacity: 0.6;
+}
+
 .App {
   text-align: center;
-  font-family: "Exo", sans-serif;
-  font-family: "Orbitron", sans-serif;
-  font-family: "Roboto Mono", monospace;
 }/*# sourceMappingURL=App.css.map */
