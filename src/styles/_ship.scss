@@ -1,0 +1,15 @@
+@use './variables.scss' as *;
+
+.shipDiv {
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    bottom: 15%;
+    right: 50%;
+    padding-top: 2.5%;
+
+    img {
+        width: 175%;
+        transform: rotate(30deg);
+    }
+}
