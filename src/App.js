@@ -102,14 +102,18 @@ function App() {
     <div className="App">
       <div className='wrapper'>
         <div class="tile"></div>
-        <div className='shipDiv'>
+        
+        <div className={`shipDiv ${score >= 500 ? 'shipLift' : ''}` }>
           <img src={ship} alt="a ship" />
+          
         </div>
         <header>
           <h1 className='topHeader'>Space Trivia</h1>
         </header>
         <div className='bodyDiv'>
           <button onClick={startNewGame} className='questionButton'>New Question</button>
+          {gameStarted === 0 ? <div className='questionDiv'><p className='introText'> Greetings, space traveler! We seem to have run out of fuel on voyage and need your help. Answer the trivia questions correctly and help us earn the credits to re-fuel. Get us to 500 and we'll be able to make the journey home!</p></div> : 
+            
           <div className='questionDiv'>
             <p dangerouslySetInnerHTML={{ __html: question }}></p>
             <form onSubmit={handleSubmit} className='form'>
@@ -120,9 +124,11 @@ function App() {
               <br></br>
               <button type='submit' disabled={formSubmitted} className='answerButton'>Answer</button>
             </form>
-            
+
           </div>
-          <DisplayBox />
+            }
+          {gameStarted === 0 ? null : <DisplayBox />}
+          
           <div className='scoreDiv'>
             <p>
               SCORE
@@ -131,7 +137,8 @@ function App() {
             </p>
           </div>
         </div>
-
+          
+        {score < 500 ? null : <div className='finalMessage'>Thanks for playing! Enjoy your return journey or keep working on your trivia skills!</div>}
         <div className="planetDiv">
 
           <div className={`image-container ${score >= 100 ? 'animate1' : ''}`}>
@@ -170,7 +177,6 @@ function App() {
             <img src={image500}
               style={{
                 display: score >= 500 ? "block" : "none",
-
               }}
               alt="Planet 5" />
           </div>

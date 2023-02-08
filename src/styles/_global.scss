@@ -5,10 +5,11 @@
     height: 100vh;
     width: 100%;
     overflow: hidden;
-    
+
     position: relative;
-    
+
 }
+
 h1 {
     font-family: $headerFont;
     color: $light;
@@ -35,6 +36,20 @@ button {
     text-transform: uppercase;
     font-family: $thirdFont;
     opacity: 0.6;
+    transition: all 0.5s ease-in-out;
+    transform: scale(1);
+}
+
+button:hover {
+    transform: scale(1.15);
+    color: $med;
+    border: 2px solid $med;
+}
+
+button:focus {
+    transform: scale(1.15);
+    color: $med;
+    border: 2px solid $med;
 }
 
 P {

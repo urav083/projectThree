@@ -15,3 +15,36 @@
 .scoreDiv {
     margin-top: 2%;
 }
+
+.introText {
+    text-transform: none;
+    margin-left: 4%;
+    margin-right: 4%;
+    line-height: 3.5rem;
+    font-size: 2rem;
+}
+
+.finalMessage {
+    text-transform: none;
+    margin-left: 4%;
+    margin-right: 4%;
+    margin-top: 3%;
+    line-height: 3.5rem;
+    font-size: 2rem;
+    transform: scale(0);
+    animation: messageTime 3s linear 4s forwards;
+    animation-iteration-count: 1;
+    
+}
+
+@keyframes messageTime {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+
+    }
+
+}

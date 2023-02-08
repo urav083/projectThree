@@ -10,6 +10,13 @@
         min-height: 65%;
     }
 
+    .introText {
+            margin-left: 4%;
+            margin-right: 4%;
+            line-height: 2.5rem;
+            font-size: 1.6rem;
+    }
+
     .questionDiv {
         width: 75%;
         height: 60%;
@@ -31,14 +38,15 @@
         animation: scroll2 4s ease-in;
         animation-iteration-count: 1;
     }
-        @keyframes scroll2 {
-            from {
-                transform: translateX(0%)
-            }
-    
-            to {
-                transform: translateX(-200%);
-                /* Move the background image to the left */
-            }
+
+    @keyframes scroll2 {
+        from {
+            transform: translateX(0%)
         }
+
+        to {
+            transform: translateX(-200%);
+            /* Move the background image to the left */
+        }
+    }
 }
