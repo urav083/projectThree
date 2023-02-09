@@ -75,8 +75,6 @@ function App() {
 
   const startNewGame = () => {
     setQuestion("");
-    // setRightAnswer("");
-    // setSelectedValue("");
     setFinalValue("");
     setFormSubmitted(false);
     setGameStarted(gameStarted + 1);
@@ -166,7 +164,7 @@ function App() {
         </div>
 
       </div>
-      <div class="text"><span>Created by Umai Rav at Juno College. 2023.</span></div>
+      <div class="text"><span>Created by Umai Rav at Juno College. <br></br> All images AI-generated. 2023.</span></div>
 
     </div>
   );
