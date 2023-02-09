@@ -8,6 +8,13 @@
     height: 55%;
 }
 
+.topHeader {
+    padding-top: 3%;
+    margin-bottom: 2%;
+    font-size: 5rem;
+    font-weight: 600;
+}
+
 .questionButton {
     width: 170px;
 }
@@ -24,6 +31,7 @@
     font-size: 2rem;
 }
 
+// Styling and animation for victory message
 .finalMessage {
     text-transform: none;
     margin-left: 4%;
@@ -34,7 +42,6 @@
     transform: scale(0);
     animation: messageTime 3s linear 4s forwards;
     animation-iteration-count: 1;
-    
 }
 
 @keyframes messageTime {
@@ -44,7 +51,65 @@
 
     100% {
         transform: scale(1);
-
     }
-
 }
+
+.text {
+    font-size: 1rem;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    bottom: 1%;
+    height: 2%;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+}
+
+.text:hover {
+    font-size: 1.6rem;
+    bottom: 3%;
+}
+
+.text span {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    width: 100%;
+}
+
+.text:hover span {
+    content: "Hovered Text";
+}
+
+// Copyright
+// .icon {
+//     display: inline-block;
+//     font-size: 1rem;
+//     color: $med;
+//     transition: all 0.3s ease-in-out;
+//     position: relative;
+// }
+
+// .icon::before {
+//     content: "ICON";
+//     position: absolute;
+// }
+
+// .icon:hover {
+//     color: $light;
+//     text-shadow: 0 0 10px $light;
+// }
+
+// .text {
+//     display: none;
+//     padding: 10px;
+//     background-color: $med;
+//     color: $light;
+//     position: absolute;
+//     bottom: 1%;
+//     left: 1%;
+// }
+
+// .icon:hover+.text {
+//     display: block;
+// }

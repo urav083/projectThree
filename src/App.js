@@ -21,7 +21,6 @@ function App() {
 
   // Fetching the api Data
   useEffect(() => {
-
     async function getData() {
       try {
         const response = await fetch("https://opentdb.com/api.php?amount=1&type=boolean");
@@ -32,21 +31,14 @@ function App() {
         console.error(error);
       }
     }
-
     getData();
-
   }, [gameStarted])
-
-
-
-  // console.log(question);
-  // console.log(rightAnswer);
-  console.log(gameStarted);
 
   // Functions
   const handleChange = (event) => {
     setSelectedValue(event.target.value)
   }
+
   const handleSubmit = (event) => {
     event.preventDefault();
     if (selectedValue === null) {
@@ -56,9 +48,11 @@ function App() {
       setFinalValue(selectedValue);
       setScore(score + 100)
       setFormSubmitted(true);
+      event.target.reset();
     } else {
       setFinalValue(selectedValue);
       setFormSubmitted(true);
+      event.target.reset();
     }
   }
 
@@ -88,39 +82,35 @@ function App() {
     setGameStarted(gameStarted + 1);
   };
 
-  // console.log(finalValue);
-
   return (
     <div className="App">
       <div className='wrapper'>
         <div class="tile"></div>
-        
-        <div className={`shipDiv ${score >= 500 ? 'shipLift' : ''}` }>
+        <div className={`shipDiv ${score >= 500 ? 'shipLift' : ''}`}>
           <img src={ship} alt="a ship" />
-          
         </div>
         <header>
           <h1 className='topHeader'>Space Trivia</h1>
         </header>
         <div className='bodyDiv'>
-          <button onClick={startNewGame} className={`questionButton ${finalValue !== '' || gameStarted === 0 ? 'glow' :''} `}>New Question</button>
-          {gameStarted === 0 ? <div className='questionDiv'><p className='introText'> Greetings, traveler! We seem to have run out of fuel on our voyage and need your help. Answer trivia questions correctly and help us earn the credits to re-fuel at five friendly planets. Get us to 500 and we'll be able to make the journey home!</p></div> : 
-            
-          <div className='questionDiv'>
-            <p dangerouslySetInnerHTML={{ __html: question }}></p>
-            <form onSubmit={handleSubmit} className='form'>
-              <label htmlFor='trueOption'>True</label>
-              <input type="radio" id='trueOption' name='quizBoolean' value='True' onChange={handleChange} />
-              <label htmlFor='falseOption'>False</label>
-              <input type="radio" id='falseOption' name='quizBoolean' value='False' onChange={handleChange} />
-              <br></br>
-              <button type='submit' disabled={formSubmitted} className='answerButton'>Answer</button>
-            </form>
+          <button onClick={startNewGame} className={`questionButton ${finalValue !== '' || gameStarted === 0 ? 'glow' : ''} `}>New Question</button>
+          {/* Ternary that displays a welcome message when game first states, and displays the question box when the player begins the game. */}
+          {gameStarted === 0 ? <div className='questionDiv'><p className='introText'> Greetings, traveler! We seem to have run out of fuel on our voyage and need your help. Answer trivia questions correctly and help us earn the credits to re-fuel at five friendly planets. Get us to 500 and we'll be able to make the journey home!</p></div> :
 
-          </div>
-            }
+            <div className='questionDiv'>
+              <p dangerouslySetInnerHTML={{ __html: question }}></p>
+              <form onSubmit={handleSubmit} className='form'>
+                <label htmlFor='trueOption'>True</label>
+                <input type="radio" id='trueOption' name='quizBoolean' value='True' onChange={handleChange} />
+                <label htmlFor='falseOption'>False</label>
+                <input type="radio" id='falseOption' name='quizBoolean' value='False' onChange={handleChange} />
+                <br></br>
+                <button type='submit' disabled={formSubmitted} className='answerButton'>Answer</button>
+              </form>
+            </div>
+          }
           {gameStarted === 0 ? null : <DisplayBox />}
-          
+
           <div className='scoreDiv'>
             <p>
               SCORE
@@ -129,8 +119,9 @@ function App() {
             </p>
           </div>
         </div>
-          
+
         {score < 500 ? null : <div className='finalMessage'>Thanks for playing! Enjoy your return journey or keep working on your trivia skills!</div>}
+
         <div className="planetDiv">
 
           <div className={`image-container ${score >= 100 ? 'animate1' : ''}`}>
@@ -174,12 +165,8 @@ function App() {
           </div>
         </div>
 
-
-
-        <div class="icon"></div>
-        <div class="text">This is the copyright</div>
       </div>
-
+      <div class="text"><span>Created by Umai Rav at Juno College. 2023.</span></div>
 
     </div>
   );

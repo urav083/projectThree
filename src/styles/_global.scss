@@ -1,13 +1,17 @@
 @use './variables.scss' as *;
 
+.App {
+    text-align: center;
+    height: 100vh;
+    position: relative;
+}
+
 .wrapper {
     margin: 0 auto;
     height: 100vh;
     width: 100%;
     overflow: hidden;
-
     position: relative;
-
 }
 
 h1 {
@@ -15,13 +19,7 @@ h1 {
     color: $light;
 }
 
-.topHeader {
-    padding-top: 3%;
-    margin-bottom: 2%;
-    font-size: 5rem;
-    font-weight: 600;
-}
-
+// button styling and button effects
 button {
     background-color: transparent;
     border: none;
@@ -46,10 +44,27 @@ button:hover {
     border: 2px solid $med;
 }
 
-button:focus {
-    transform: scale(1.15);
-    color: $med;
-    border: 2px solid $med;
+// button:focus {
+//     transform: scale(1.15);
+//     color: $med;
+//     border: 2px solid $med;
+// }
+
+// button glow effect class and animation
+.glow {
+    animation: glow-and-enlarge 1s ease-in-out infinite alternate;
+}
+
+@keyframes glow-and-enlarge {
+    from {
+        transform: scale(1);
+        box-shadow: 0 0 10px #fff;
+    }
+
+    to {
+        transform: scale(1.1);
+        box-shadow: 0 0 20px #fff;
+    }
 }
 
 P {
