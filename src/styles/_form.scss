@@ -1,0 +1,55 @@
+@use './variables.scss' as *;
+
+form {
+    margin-top: 1%;
+    margin-bottom: 2%;
+    padding: 1%;
+}
+
+input[type="radio"] {
+    appearance: none;
+    background-color: #fff;
+    border: 2px solid #000;
+    border-radius: 20%;
+    height: 20px;
+    width: 20px;
+    outline: none;
+    position: relative;
+    vertical-align: middle;
+    margin-left: 3%;
+    margin-right: 2%;
+    padding-top: 2%;
+    margin-top: -0.14%;
+}
+
+input[type="radio"]:before {
+    content: "";
+    display: block;
+    border-radius: 50%;
+    height: 12px;
+    width: 12px;
+    left: 2px;
+    position: absolute;
+    top: 2px;
+}
+
+input[type="radio"]:checked:before {
+    background-color: #000;
+}
+
+.answerButton {
+    background-color: transparent;
+    border: none;
+    margin: 0;
+    padding: 0;
+    margin-top: 4%;
+    background-color: black;
+    color: $light;
+    border: 2px solid white;
+    border-radius: 5px;
+    font-size: 1.6rem;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    font-family: $thirdFont;
+    opacity: 0.6;
+}
